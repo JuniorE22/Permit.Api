@@ -14,16 +14,15 @@ namespace Permit.Model.Entities
         public DateTime PermitDate { get; set; }
         #endregion
         #region  Audit Entity
-        public DateTime CreatedDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTime? UpdatedDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string CreatedBy { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string UpdatedBy { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public DateTime CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
+        public string CreatedBy { get; set; }
+        public string UpdatedBy { get; set; }
         #endregion
 
         [ForeignKey("PermissionType")]
         public int PermissionType { get; set; }
         public DateTime CreatePermission { get; set; }
         public virtual PermissionType PermissionId {get; set;}
-        
     }
 }
