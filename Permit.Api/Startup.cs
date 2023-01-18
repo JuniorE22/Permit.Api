@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Permit.Model.Context;
+using Permit.Model.Entities;
 using Permit.Repository;
 using Permit.Service.FluentValidations;
 using Permit.Services;
@@ -39,8 +40,8 @@ namespace Permit.Api
             services.AddControllers();
             services.AddDbContext<PermitDbContext>(options => options.UseMySql(Configuration.GetConnectionString("Connection")));
 
-            services.AddScoped<IBaseRepository<PermissionRepository>>();
-            services.AddScoped<IBaseRepository<PermissionTypeRepository>>();
+            services.AddScoped<IBaseRepository<Permission>,PermissionRepository>();
+            services.AddScoped<IBaseRepository<PermissionType>,PermissionTypeRepository>();
             services.AddScoped<IBaseService<PermissionDTO>, PermissionService>();
             services.AddScoped<IValidator<PermissionDTO>, PermissionValidator>();
             services.AddScoped<IValidator<PermissionTypeDTO>, PermissionTypeValitador>();
