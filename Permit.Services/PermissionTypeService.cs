@@ -45,8 +45,8 @@ namespace Permit.Services
             {
                 return new OperationResult(false, "El Permiso existe");
             }
-            var article = _mapper.Map<PermissionType>(entity);
-            _permissionTypeRepository.Add(article);
+            var permissionType = _mapper.Map<PermissionType>(entity);
+            _permissionTypeRepository.Add(permissionType);
             return new OperationResult(true, "El Permiso ha sido agregado");
         }
         public IOperationResult Update(PermissionTypeDTO dto)

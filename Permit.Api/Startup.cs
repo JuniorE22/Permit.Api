@@ -43,6 +43,7 @@ namespace Permit.Api
             services.AddScoped<IBaseRepository<Permission>,PermissionRepository>();
             services.AddScoped<IBaseRepository<PermissionType>,PermissionTypeRepository>();
             services.AddScoped<IBaseService<PermissionDTO>, PermissionService>();
+            services.AddScoped<IBaseService<PermissionTypeDTO>, PermissionTypeService>();
             services.AddScoped<IValidator<PermissionDTO>, PermissionValidator>();
             services.AddScoped<IValidator<PermissionTypeDTO>, PermissionTypeValitador>();
 
@@ -53,6 +54,7 @@ namespace Permit.Api
             var mapperConfig = new MapperConfiguration(x =>
             {
                 x.AddProfile<PermissionProfile>();
+                x.AddProfile<PermissionTypeProfile>();
             });
             IMapper mapper = mapperConfig.CreateMapper();
             services.AddSingleton(mapper);

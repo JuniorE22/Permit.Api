@@ -11,8 +11,8 @@ namespace Article.Service.Map
     {
         public PermissionTypeProfile()
         {
-            CreateMap<PermissionTypeDTO, PermissionTypeProfile>();
-            CreateMap<PermissionTypeProfile, PermissionTypeDTO>();
+            CreateMap<PermissionTypeDTO, PermissionType>();
+            CreateMap<PermissionType, PermissionTypeDTO>();
 
         }
     }
